@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8"><title>Top Restaurant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Restaurant</title>
+    <style>
+        div {
+            background-color: white;
+            width: 350px;
+            height: 550px;
+            border: 1px solid black;
+            padding: 18px;
+            margin: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    {% include 'includes/header.html' %}
+
+    <main>
+        <p>Search location: {{location}}</p>
+        <p>Search term: {{search_term or 'None Specified'}}</p>
+        <!-- <p>Data: {{ restaurant }}</p> -->
+        <h2>Top Restaurant:</h2> 
+        <div>
+            <p><font size="+3">{{ restaurant.get('name') }}</font></p>
+            <p>{{ restaurant.get('display_address') }}</p>
+            <p>Phone Number: {{ restaurant.get('phone') }}</p> <!--not sure why the phone never shows and price only does sometimes-->
+            <p>Price: {{ restaurant.get('price') }}</p>
+            <p><img src={{ restaurant.get('image_url') }} 
+                width=300
+                height=300
+                alt="pic" /></p>
+        </div>
+    </main>
+</body>
+</html>
+
