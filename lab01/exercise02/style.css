@@ -19,6 +19,10 @@ Feel free to borrow from Exercise 1.
 
 /* Mobile Phone Media Query */
 @media only screen and (max-width: 600px) {
+    div {
+        width: 585;
+        height: 1000;
+    }
 
     
 }
